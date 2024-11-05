@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries de Fundo</title>
+    <style>
+        /* Estilos gerais para a página */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s ease; /* Transição suave para mudanças de cor */
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2rem;
+        }
+
+        /* Media query para telas maiores que 1024px */
+        @media (min-width: 1025px) {
+            body {
+                background-color: #A2C9FF; /* Azul suave */
+            }
+        }
+
+        /* Media query para telas entre 768px e 1024px */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            body {
+                background-color: #A8E6CF; /* Verde suave */
+            }
+        }
+
+        /* Media query para telas menores que 768px */
+        @media (max-width: 767px) {
+            body {
+                background-color: #FFEB99; /* Amarelo suave */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Teste de Media Queries</h1>
+        <p>Redimensione a janela para ver a mudança de cor de fundo.</p>
+    </div>
+
+</body>
+</html>

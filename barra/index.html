@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de Navegação Suave</title>
+    <style>
+        /* Resetando margens e padding para evitar padrões indesejados */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Estilo geral do body */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Container do menu */
+        nav {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px;
+            position: relative;
+        }
+
+        /* Links do menu */
+        .menu {
+            display: flex;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 0 20px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .menu a:hover {
+            background-color: #6c9e5b;
+            color: white;
+        }
+
+        /* Ícone de hambúrguer */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            border: none;
+            position: relative;
+        }
+
+        .hamburger div {
+            background-color: #333;
+            height: 4px;
+            width: 30px;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        /* Media query para telas menores que 768px (exibe o ícone de hambúrguer) */
+        @media (max-width: 767px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                text-align: center;
+            }
+
+            .menu li {
+                margin: 10px 0;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .menu.show {
+                display: flex;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <!-- Ícone de hambúrguer -->
+        <button class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+
+        <!-- Menu de navegação -->
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <script>
+        // Função para alternar a visibilidade do menu
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
